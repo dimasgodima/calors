@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Калории — трекер</title>
+  <link rel='stylesheet' href='/style.css'> 
+</head>
+<body>
+  <h1>Трекер Калорий</h1>
+
+  <p>Цель на день: <strong id="goal">1100</strong> ккал</p>
+  <p>Съедено: <strong id="consumed">0</strong> ккал</p>
+  <p>Осталось: <strong id="remaining">1100</strong> ккал</p>
+
+  <button onclick="startScanner()">Сканировать штрих-код</button>
+  <div id="scanner"></div>
+
+  <form onsubmit="addProduct(event)">
+    <input type="text" id="barcode" placeholder="Штрих-код" readonly>
+    <input type="text" id="name" placeholder="Название продукта" required>
+    <input type="number" id="grams" placeholder="Граммы" required>
+    <input type="number" id="kcalPer100g" placeholder="Ккал на 100г" required>
+    <button type="submit">Добавить</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr><th>Продукт</th><th>Граммы</th><th>Ккал</th></tr>
+    </thead>
+    <tbody id="product-list"></tbody>
+  </table>
+
+  <button onclick="resetDay()">Очистить день</button>
+
+  <script src="https://unpkg.com/@ericblade/quagga2@1.2.6/dist/quagga.min.js"></script>
+  <script src="/script.js"></script>
+</body>
+</html>
