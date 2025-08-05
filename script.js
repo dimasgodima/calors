@@ -32,6 +32,7 @@ function resetDay() {
   document.getElementById('barcode').value = '';
 }
 
+
 function startScanner() {
   const scannerEl = document.getElementById('scanner');
   Quagga.init({
