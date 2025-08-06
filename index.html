@@ -3,18 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>Калории — трекер</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' href='/style.css'> 
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
 </head>
 <body>
   <h1>Трекер Калорий</h1>
 
-  <p>Цель на день: <strong id="goal">1100</strong> ккал</p>
+  <label>
+    Цель на день:
+    <input type="number" id="goal-input" placeholder="Введите норму ккал">
+  </label>
   <p>Съедено: <strong id="consumed">0</strong> ккал</p>
-  <p>Осталось: <strong id="remaining">1100</strong> ккал</p>
+  <p>Осталось: <strong id="remaining">0</strong> ккал</p>
 
-  
   <button onclick="startScanner()">Сканировать штрих-код</button>
-  <div id="scanner"></div>
+  <div id="scanner" style="width: 100%; max-width: 400px; margin: 10px auto;"></div>
 
   <form onsubmit="addProduct(event)">
     <input type="text" id="barcode" placeholder="Штрих-код" readonly>
@@ -26,14 +30,16 @@
 
   <table>
     <thead>
-      <tr><th>Продукт</th><th>Граммы</th><th>Ккал</th></tr>
-    </thead>
+      <tr><th>Продукт</th><th>Граммы</th><th>Ккал</th><th>Действие</th></tr>
+    </thead>    
     <tbody id="product-list"></tbody>
   </table>
 
   <button onclick="resetDay()">Очистить день</button>
 
-  <script src="https://unpkg.com/@ericblade/quagga2@1.2.6/dist/quagga.min.js"></script>
+  <h2>История</h2>
+  <div id="history"></div>
+
   <script src="/script.js"></script>
 </body>
 </html>

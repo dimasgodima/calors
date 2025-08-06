@@ -1,37 +1,58 @@
 body {
   font-family: sans-serif;
+  padding: 20px;
   max-width: 600px;
   margin: auto;
-  padding: 20px;
+  background: #f9f9f9;
 }
 
-
-h1 {
-  text-align: center;
-}
-
-
-input,
-button {
-  margin: 5px 0;
-  padding: 5px;
+input, button {
+  display: block;
   width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  font-size: 16px;
 }
 
 table {
   width: 100%;
+  margin-top: 20px;
   border-collapse: collapse;
-  margin-top: 10px;
 }
 
-th,
-td {
+th, td {
   border: 1px solid #ccc;
   padding: 8px;
-  text-align: left;
+  text-align: center;
 }
 
-#scanner {
-  width: 100%;
-  margin-top: 10px;
+button {
+  background: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+}
+
+.history-card {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin: 5px 0;
 }
